@@ -8,8 +8,8 @@ kernel_image_src=
 kernel_image_dst=
 if [[ "${ARCH}" == "arm64" ]]; then
         # https://github.com/GrapheneOS/device_generic_goldfish/blob/14/board/kernel/arm64.mk#L52
-        kernel_image_src="Image.gz"
-        kernel_image_dst="kernel-${KERNEL_VERSION}-gz"
+        kernel_image_src="Image"
+        kernel_image_dst="kernel-${KERNEL_VERSION}"
 elif [[ "${ARCH}" == "x86_64" ]]; then
         kernel_image_src="bzImage"
         kernel_image_dst="kernel-${KERNEL_VERSION}"
@@ -31,7 +31,7 @@ test -d lib && rm -r lib
 bsdtar xvf common_dist/system_dlkm_staging_archive.tar.gz >/dev/null 2>&1
 rm -r ${COMMON_PREBUILT_PATH}/system_dlkm_staging/lib
 cp -a "$@" lib ${COMMON_PREBUILT_PATH}/system_dlkm_staging
-cp "$@" virt_dist/{mac80211,cfg80211}.ko ${COMMON_PREBUILT_PATH}
+[[ "${ARCH}" == "x86_64" ]] && cp "$@" virt_dist/{mac80211,cfg80211}.ko ${COMMON_PREBUILT_PATH}
 for file in $(find ${VIRT_PREBUILT_PATH} -maxdepth 1 -type f -printf "%f\n"); do
         cp "$@" virt_dist/$file ${VIRT_PREBUILT_PATH}/$file
 done

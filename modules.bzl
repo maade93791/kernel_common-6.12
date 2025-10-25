@@ -8,7 +8,7 @@ This module contains a full list of kernel modules
 
 _COMMON_GKI_MODULES_LIST = [
     # keep sorted
-    "crypto/sha1_generic.ko",
+    #"crypto/sha1_generic.ko",
     "drivers/block/virtio_blk.ko",
     "drivers/block/zram/zram.ko",
     "drivers/bluetooth/btbcm.ko",
@@ -97,7 +97,7 @@ _ARM_GKI_MODULES_LIST = [
 _ARM64_GKI_MODULES_LIST = [
     # keep sorted
     "arch/arm64/geniezone/gzvm.ko",
-    "drivers/android/binder/rust_binder.ko",
+    #"drivers/android/binder/rust_binder.ko",
     "drivers/char/hw_random/cctrng.ko",
     "drivers/misc/open-dice.ko",
     "drivers/ptp/ptp_kvm.ko",
@@ -110,7 +110,7 @@ _X86_GKI_MODULES_LIST = [
 
 _X86_64_GKI_MODULES_LIST = [
     # keep sorted
-    "drivers/android/binder/rust_binder.ko",
+    #"drivers/android/binder/rust_binder.ko",
     "drivers/ptp/ptp_kvm.ko",
     "net/tipc/tipc.ko",
     "net/tipc/tipc_diag.ko",
