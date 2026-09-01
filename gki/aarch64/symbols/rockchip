@@ -1392,7 +1392,7 @@
   v4l2_async_nf_register
   v4l2_async_nf_unregister
   __v4l2_async_register_subdev
-  v4l2_async_register_subdev_sensor
+  __v4l2_async_register_subdev_sensor
   v4l2_async_subdev_nf_init
   v4l2_async_unregister_subdev
   v4l2_ctrl_find

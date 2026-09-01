@@ -1409,7 +1409,7 @@
   vchan_tx_submit
 
 # required by tcc-arxxxx.ko
-  v4l2_async_register_subdev_sensor
+  __v4l2_async_register_subdev_sensor
   v4l2_ctrl_new_std_menu
 
 # required by tcc-cap-isp.ko
